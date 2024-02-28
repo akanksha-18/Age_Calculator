@@ -22,15 +22,13 @@ const ageCalculate=()=>{
 
  displayresult(days,months,years);
 };
-const isFutureDate=(birthDetails,currentYear,currentMonth,currentDate)=>{
-  return(
-    birthDetails.year>currentYear || (birthDetails.year === currentYear && (
-        birthDetails.month > currentMonth || (
-            birthDetails.month === currentMonth && birthDetails.date > currentDate
-        )
-    ))
-  );
+const isFutureDate = (birthDetails, currentYear, currentMonth, currentDate) => {
+    const birthDate = new Date(birthDetails.year, birthDetails.month - 1, birthDetails.date);
+    const currentDateObj = new Date(currentYear, currentMonth, currentDate);
+
+    return birthDate > currentDateObj;
 };
+
 const calculateAge=(birthDetails,currentYear,currentMonth,currentDate) => {
     let years=currentYear-birthDetails.year;
     let months,days;
