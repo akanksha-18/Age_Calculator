@@ -4,8 +4,10 @@
   box-sizing: border-box;  
 }
 body{
-    background-color:#FF3EA5;
+     background-color:#FF3EA5; 
 }
+
+
 .container{
     width: min(40%, 28.12em);
     position: absolute;
@@ -16,6 +18,25 @@ body{
 .container * {
     border: none;
     outline: none;
+}
+.images{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 0 0 0.93em 1.25em rgba(0, 0, 0, 0.1);
+}
+.images img{
+    height: 100px;
+    width: 100px;
+    margin-right: 10px; 
+}
+.images img:nth-child(-n+3) {
+    margin-right: 0;
+}
+.container img{
+    height: 150px;
+    width: 450px;
+    box-shadow: 0 0 0.93em 1.25em rgba(0, 0, 0, 0.3);
 }
 .input-wrapper{
     background-color: #ffffff;
@@ -36,9 +57,16 @@ input{
     color: #080808;
     font-size: 0.87em;
 }
-button{
+/* button{
     color: #ffffff;
     background-color:#FF7ED4;
+} */
+button {
+    color: #ffffff;
+    background-color: #FF7ED4;
+    padding: 1em 1.5em;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
 }
 .output-wrapper{
     width: 100%;
